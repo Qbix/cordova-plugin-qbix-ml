@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Igor Martsekha"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Qbix/cordova-plugin-qbix-ml"
+  },
+  "name": "cordova-plugin-qbix-ml",
+  "version": "1.0.0",
+  "description": "Cordova plugin with ML features which based on Google Firebase MLKit",
+  "cordova": {
+    "id": "cordova-plugin-qbix-ml",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {}
+}

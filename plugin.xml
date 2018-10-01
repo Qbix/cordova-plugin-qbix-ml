@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-qbix-ml" version="1.0.0"
+xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>Qbix ML Plugin</name>
+
+	<license>MIT</license>
+
+	<engines>
+		<engine name="cordova" version=">=3.2.0" />
+	</engines>
+
+	<platform name="android">
+		<js-module name="Q.ML.Cordova" src="www/q_ml_cordova.js">
+			<clobbers target="Q.ML.Cordova" />
+		</js-module>
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="QMLCordova">
+				<param name="android-package" value="com.q.ml.cordova.plugin.QMLCordova" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/*">
+				<uses-permission android:name="android.permission.INTERNET" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<meta-data
+      			android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+      			android:value="ocr" />
+		</config-file>
+		<resource-file src="src/android/google-services.json" target="."/>
+		<source-file src="src/android/QMLCordova.java" target-dir="src/com/q/ml/cordova/plugin" />
+		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+		<framework src="com.google.firebase:firebase-core:16.0.3" />
+		<framework src="com.google.firebase:firebase-ml-vision:17.0.0" />
+	</platform>
+
+	<platform name="ios">
+		<js-module name="Q.ML.Cordova" src="www/q_ml_cordova.js">
+			<clobbers target="Q.ML.Cordova" />
+		</js-module>
+		<config-file parent="/*" target="config.xml">
+			<feature name="QMLCordova">
+				<param name="ios-package" value="QMLCordova" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+		<resource-file src="src/ios/GoogleService-Info.plist" />
+		
+		<header-file src="src/ios/AppDelegate+QMLCordova.h" />
+		<source-file src="src/ios/AppDelegate+QMLCordova.m" />
+		<header-file src="src/ios/QMLCordova.h" />
+		<source-file src="src/ios/QMLCordova.m" />
+
+		<framework src="Firebase/Core" type="podspec" spec="" />
+		<framework src="Firebase/MLVision" type="podspec" spec="" />
+		<framework src="Firebase/MLVisionTextModel" type="podspec" spec="" />
+	</platform>
+
+	<hook src="scripts/after_prepare.js" type="after_prepare" />
+	<hook src="scripts/after_plugin_add.js" type="after_plugin_add" />
+	<!-- <hook src="scripts/before_plugin_rm.js" type="before_plugin_rm" /> -->
+</plugin>
