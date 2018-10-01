@@ -52,7 +52,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 		<header-file src="src/ios/QMLCordova.h" />
 		<source-file src="src/ios/QMLCordova.m" />
 
-		<framework src="Firebase/Core" type="podspec" spec="" />
+		<framework src="Firebase/Core" type="podspec" spec="5.9.0" />
 		<framework src="Firebase/MLVision" type="podspec" spec="" />
 		<framework src="Firebase/MLVisionTextModel" type="podspec" spec="" />
 	</platform>
