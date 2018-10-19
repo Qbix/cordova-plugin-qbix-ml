@@ -28,7 +28,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
       			android:name="com.google.firebase.ml.vision.DEPENDENCIES"
       			android:value="ocr" />
 		</config-file>
-		<resource-file src="src/android/google-services.json" target="."/>
+		<!-- <resource-file src="src/android/google-services.json" target="."/> -->
 		<source-file src="src/android/QMLCordova.java" target-dir="src/com/q/ml/cordova/plugin" />
 		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 		<framework src="com.google.firebase:firebase-core:16.0.3" />
